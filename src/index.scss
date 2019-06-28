@@ -1,0 +1,105 @@
+@import url('https://fonts.googleapis.com/css?family=Pragati+Narrow|Questrial&display=swap');
+
+html body {
+    font-family: 'Pragati Narrow', sans-serif;
+}
+
+h1,h2,h3,h4,h5,h6 {
+    font-family: 'Questrial', sans-serif;
+}
+
+
+/* ---------------------------------------------------
+    SIDEBAR
+----------------------------------------------------- */
+
+
+div.page-sidebar {
+    width: 100%;
+    top: 0;
+    left: 0;
+    height: calc(100vh - 4rem);
+    position: fixed;
+    z-index: 1;
+}
+
+.scroller {
+    overflow-y: auto;
+    max-height: calc(100vh - 3rem);
+    display: block;
+    margin-top: 50px;
+}
+
+/* ---------------------------------------------------
+    SIDEBAR ITEMS 
+----------------------------------------------------- */
+
+.menu-item {
+    height: 150px;
+    color: white;
+    font-size: .9em;
+    line-height: 1.1em;
+
+    .txt {
+        padding: 10px;
+        margin: 0px;
+    }
+}
+
+
+.bgImg {
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: cover;
+
+    &.menu-item {
+        padding: 0;
+    }
+}
+
+.darken-overlay {
+    background-color: rgba(0, 0, 0, 0.5);
+}
+
+
+/* ---------------------------------------------------
+    CONTENT PAGE
+----------------------------------------------------- */
+
+div.page-content {
+    margin-top: 70px;
+}
+
+.hero img {
+    max-height: 200px;
+}
+
+.author {
+    font-size: .9rem;
+    line-height: 1.25rem;
+    margin-left: 20px;
+}
+
+
+/* ---------------------------------------------------
+    MEDIAQUERIES
+----------------------------------------------------- */
+
+
+@media (min-width: 768px) {
+
+    div.page-sidebar {
+        top: 20px;
+        position: sticky;
+    }
+
+    div.page-content {
+        top: 20px;
+    }
+
+    .scroller {
+        max-height: calc(100vh - 5rem);
+        position: relative;
+    }
+
+}
