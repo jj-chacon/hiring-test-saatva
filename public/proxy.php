@@ -1,11 +1,15 @@
 <?php
 
-$query=$_SERVER['QUERY_STRING'];  //get the full query string in url
-$query_arr=explode("url=",$query);  //split the string by first get key
+ header("Access-Control-Allow-Origin: *");
+ header('Content-type: application/json');
 
-$url = $query_arr[1];  //take second parameter as url to be loaded
-// if (preg_match('/\b(https?|ftp):\/\/*/', $url) !== 1) die;
+$query = $_SERVER['QUERY_STRING'];  
+$query_arr=explode("url=",$query);  
 
-print_r($query);
-// echo (file_get_contents($url));
+$url = $query_arr[1]; 
+
+$json_str = file_get_contents($url);
+$json_obj = json_decode($json_str);
+
+echo json_encode($json_obj);
 ?>
